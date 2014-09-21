@@ -34,10 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="LICENSE.txt" />
-    <None Include="README.md" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="CollectionLinq\Collection.cs" />
     <Compile Include="CollectionLinq\CollectionSorter.cs" />
     <Compile Include="CollectionLinq\FiniteSet.cs" />
