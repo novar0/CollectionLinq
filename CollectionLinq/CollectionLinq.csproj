@@ -34,12 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CollectionLinq\Collection.cs" />
+    <Compile Include="CollectionLinq\ReadOnlyCollection.cs" />
     <Compile Include="CollectionLinq\CollectionSorter.cs" />
-    <Compile Include="CollectionLinq\FiniteSet.cs" />
+    <Compile Include="CollectionLinq\ReadOnlyFiniteSet.cs" />
     <Compile Include="CollectionLinq\IOrderedReadOnlyCollection.cs" />
     <Compile Include="CollectionLinq\IOrderedReadOnlyList.cs" />
-    <Compile Include="CollectionLinq\List.cs" />
+    <Compile Include="CollectionLinq\ReadOnlyList.cs" />
     <Compile Include="CollectionLinq\ListRangeEnumerator.cs" />
     <Compile Include="CollectionLinq\ReverseListEnumerator.cs" />
     <Compile Include="CollectionLinq\StructuralEquatable.cs" />

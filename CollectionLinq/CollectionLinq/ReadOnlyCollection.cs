@@ -11,7 +11,7 @@ namespace BusinessClassLibrary.Collections.Linq
 	[System.Diagnostics.CodeAnalysis.SuppressMessage ("Microsoft.Naming",
 		"CA1711:IdentifiersShouldNotHaveIncorrectSuffix",
 		Justification = "Analogous to System.Linq.Enumerable.")]
-	public static class Collection
+	public static class ReadOnlyCollection
 	{
 		/// <summary>
 		/// Проверяет, содержит ли коллекция какие-либо элементы.
@@ -116,7 +116,7 @@ namespace BusinessClassLibrary.Collections.Linq
 			}
 			if (count >= source.Count)
 			{
-				return List.Empty<TSource> ();
+				return ReadOnlyList.Empty<TSource> ();
 			}
 			return new SkipReadOnlyCollection<TSource> (source, count);
 		}
@@ -142,7 +142,7 @@ namespace BusinessClassLibrary.Collections.Linq
 
 			if ((source.Count < 1) || (count < 1))
 			{
-				return List.Empty<TSource> ();
+				return ReadOnlyList.Empty<TSource> ();
 			}
 			if (count >= source.Count)
 			{
@@ -173,7 +173,7 @@ namespace BusinessClassLibrary.Collections.Linq
 			Contract.EndContractBlock ();
 
 			return (source.Count < 1) ?
-				(IReadOnlyCollection<TResult>)List.Empty<TSource> () :
+				(IReadOnlyCollection<TResult>)ReadOnlyList.Empty<TSource> () :
 				new SelectReadOnlyCollection<TSource, TResult> (source, selector);
 		}
 
@@ -200,7 +200,7 @@ namespace BusinessClassLibrary.Collections.Linq
 			Contract.EndContractBlock ();
 
 			return (source.Count < 1) ?
-				(IReadOnlyCollection<TResult>)List.Empty<TSource> () :
+				(IReadOnlyCollection<TResult>)ReadOnlyList.Empty<TSource> () :
 				new SelectIndexReadOnlyCollection<TSource, TResult> (source, selector);
 		}
 
@@ -408,7 +408,7 @@ namespace BusinessClassLibrary.Collections.Linq
 			Contract.EndContractBlock ();
 
 			return ((first.Count < 1) || (second.Count < 1)) ?
-				(IReadOnlyCollection<TResult>)List.Empty<TResult> () :
+				(IReadOnlyCollection<TResult>)ReadOnlyList.Empty<TResult> () :
 				new ZipReadOnlyCollection<TFirst, TSecond, TResult> (first, second, selector);
 		}
 

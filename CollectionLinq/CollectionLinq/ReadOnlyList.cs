@@ -11,7 +11,7 @@ namespace BusinessClassLibrary.Collections.Linq
 	[System.Diagnostics.CodeAnalysis.SuppressMessage ("Microsoft.Naming",
 		"CA1711:IdentifiersShouldNotHaveIncorrectSuffix",
 		Justification = "Analogous to System.Linq.Enumerable.")]
-	public static class List
+	public static class ReadOnlyList
 	{
 		/// <summary>
 		/// Создаёт пустой список.

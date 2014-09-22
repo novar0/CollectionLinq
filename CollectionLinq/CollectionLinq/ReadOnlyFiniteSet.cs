@@ -11,7 +11,7 @@ namespace BusinessClassLibrary.Collections.Linq
 	[System.Diagnostics.CodeAnalysis.SuppressMessage ("Microsoft.Naming",
 		"CA1711:IdentifiersShouldNotHaveIncorrectSuffix",
 		Justification = "Analogous to System.Linq.Enumerable.")]
-	public static class FiniteSet
+	public static class ReadOnlyFiniteSet
 	{
 		/// <summary>
 		/// Создаёт пустое множество.
@@ -20,7 +20,7 @@ namespace BusinessClassLibrary.Collections.Linq
 		/// <returns>Пустое множество.</returns>
 		public static IReadOnlyFiniteSet<TResult> Empty<TResult> ()
 		{
-			return List.EmptyReadOnlyList<TResult>.GetInstance ();
+			return ReadOnlyList.EmptyReadOnlyList<TResult>.GetInstance ();
 		}
 
 		/// <summary>
@@ -39,9 +39,9 @@ namespace BusinessClassLibrary.Collections.Linq
 
 			if (count < 1)
 			{
-				return List.EmptyReadOnlyList<int>.GetInstance ();
+				return ReadOnlyList.EmptyReadOnlyList<int>.GetInstance ();
 			}
-			return new List.RangeReadOnlyList (start, count);
+			return new ReadOnlyList.RangeReadOnlyList (start, count);
 		}
 
 		/// <summary>
@@ -179,7 +179,7 @@ namespace BusinessClassLibrary.Collections.Linq
 			}
 			if (first == second)
 			{
-				return List.EmptyReadOnlyList<TSource>.GetInstance ();
+				return ReadOnlyList.EmptyReadOnlyList<TSource>.GetInstance ();
 			}
 
 			// заранее считаем количество элементов
@@ -248,7 +248,7 @@ namespace BusinessClassLibrary.Collections.Linq
 			}
 			if (first == second)
 			{
-				return List.EmptyReadOnlyList<TSource>.GetInstance ();
+				return ReadOnlyList.EmptyReadOnlyList<TSource>.GetInstance ();
 			}
 
 			// заранее считаем количество элементов
@@ -415,7 +415,7 @@ namespace BusinessClassLibrary.Collections.Linq
 			{
 				if (_buffer == null)
 				{
-					var buf = Collection.ToArray (_source);
+					var buf = ReadOnlyCollection.ToArray (_source);
 					Array.Reverse (buf);
 					_buffer = buf;
 				}

@@ -36,10 +36,10 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FiniteSetTests.cs" />
-    <Compile Include="CollectionTests.cs" />
+    <Compile Include="ReadOnlyFiniteSetTests.cs" />
+    <Compile Include="ReadOnlyCollectionTests.cs" />
     <Compile Include="StructuralEquatableTests.cs" />
-    <Compile Include="ListTests.cs" />
+    <Compile Include="ReadOnlyListTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CollectionLinq\CollectionLinq.csproj">
