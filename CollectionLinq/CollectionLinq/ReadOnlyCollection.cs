@@ -422,7 +422,7 @@ namespace BusinessClassLibrary.Collections.Linq
 		{
 			if (source == null)
 			{
-				throw new ArgumentNullException ("first");
+				throw new ArgumentNullException ("source");
 			}
 			Contract.EndContractBlock ();
 
