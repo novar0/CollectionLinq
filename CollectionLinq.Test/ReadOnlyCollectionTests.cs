@@ -116,13 +116,13 @@ namespace BusinessClassLibrary.Collections.Linq.Test
 		[TestCategory ("Collections.Linq.ReadOnlyCollection")]
 		public void Collection_Select ()
 		{
-			var collection = ToArray (ReadOnlyCollection.Select (new int[0], item => item * 2));
+			var collection = ToArray (ReadOnlyCollection.Select (new int[0], item => (item * 2).ToString ()));
 			Assert.AreEqual (0, collection.Count);
-			collection = ToArray (ReadOnlyCollection.Select (new int[] { 9, 3, 1 }, item => item + 3));
+			collection = ToArray (ReadOnlyCollection.Select (new int[] { 9, 3, 1 }, item => (item + 3).ToString (System.Globalization.DateTimeFormatInfo.InvariantInfo)));
 			Assert.AreEqual (3, collection.Count);
-			Assert.AreEqual (12, collection[0]);
-			Assert.AreEqual (6, collection[1]);
-			Assert.AreEqual (4, collection[2]);
+			Assert.AreEqual ("12", collection[0]);
+			Assert.AreEqual ("6", collection[1]);
+			Assert.AreEqual ("4", collection[2]);
 
 			var collection2 = ToArray (ReadOnlyCollection.Select (new string[0], item => item + "_"));
 			Assert.AreEqual (0, collection2.Count);
@@ -137,13 +137,13 @@ namespace BusinessClassLibrary.Collections.Linq.Test
 		[TestCategory ("Collections.Linq.ReadOnlyCollection")]
 		public void Collection_SelectIdx ()
 		{
-			var collection = ToArray (ReadOnlyCollection.Select (new int[0], (item, idx) => item * idx));
+			var collection = ToArray (ReadOnlyCollection.Select (new int[0], (item, idx) => (item * idx).ToString ()));
 			Assert.AreEqual (0, collection.Count);
-			collection = ToArray (ReadOnlyCollection.Select (new int[] { 9, 3, 1 }, (item, idx) => item * idx));
+			collection = ToArray (ReadOnlyCollection.Select (new int[] { 9, 3, 1 }, (item, idx) => (item * idx).ToString (System.Globalization.DateTimeFormatInfo.InvariantInfo)));
 			Assert.AreEqual (3, collection.Count);
-			Assert.AreEqual (0, collection[0]);
-			Assert.AreEqual (3, collection[1]);
-			Assert.AreEqual (2, collection[2]);
+			Assert.AreEqual ("0", collection[0]);
+			Assert.AreEqual ("3", collection[1]);
+			Assert.AreEqual ("2", collection[2]);
 
 			var collection2 = ToArray (ReadOnlyCollection.Select (new string[0], (item, idx) => item + idx.ToString (System.Globalization.CultureInfo.InvariantCulture)));
 			Assert.AreEqual (0, collection2.Count);

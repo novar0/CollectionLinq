@@ -173,7 +173,7 @@ namespace BusinessClassLibrary.Collections.Linq
 			Contract.EndContractBlock ();
 
 			return (source.Count < 1) ?
-				(IReadOnlyCollection<TResult>)ReadOnlyList.Empty<TSource> () :
+				(IReadOnlyCollection<TResult>)ReadOnlyList.Empty<TResult> () :
 				new SelectReadOnlyCollection<TSource, TResult> (source, selector);
 		}
 
@@ -200,7 +200,7 @@ namespace BusinessClassLibrary.Collections.Linq
 			Contract.EndContractBlock ();
 
 			return (source.Count < 1) ?
-				(IReadOnlyCollection<TResult>)ReadOnlyList.Empty<TSource> () :
+				(IReadOnlyCollection<TResult>)ReadOnlyList.Empty<TResult> () :
 				new SelectIndexReadOnlyCollection<TSource, TResult> (source, selector);
 		}
 

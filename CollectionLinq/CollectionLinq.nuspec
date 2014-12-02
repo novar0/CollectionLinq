@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>CollectionLinq</id>
-        <version>0.2.1</version>
+        <version>0.2.2</version>
         <authors>Novar</authors>
         <projectUrl>https://github.com/novar0/CollectionLinq</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
